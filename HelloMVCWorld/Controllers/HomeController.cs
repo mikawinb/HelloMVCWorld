@@ -12,7 +12,13 @@ namespace HelloMVCWorld.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            Models.Movie movie = new Models.Movie();
+            {
+                movie.Title = "The Godfather";
+                movie.ReleaseDate = new DateTime(1972, 3, 24);
+            };
+
+            return View(movie);
             //return Content("Hello, MVC World!");
         }
     }

@@ -1,4 +1,4 @@
-﻿
+﻿@model HelloMVCWorld.Models.Movie
 @{
     Layout = null;
 }
@@ -10,9 +10,134 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
+    <title>@Model.Title</title>
 </head>
 <body>
     <span style="font-size: 18pt;">Hello, <b>MVC</b> world!</span>
+    <p>
+        The movie <b>@Model.Title</b> was released @Model.ReleaseDate.ToLongDateString()
+    </p>
+
+    @*<p>
+            @{
+                var helloWorld = "<b>Hello, world!</b>";
+
+                @:This is plain text!
+                <br><br>
+                <text>This is plain text as well, and we can
+                    even span multiple lines, if needed!</text>
+            }
+
+            <p>@helloWorld</p>
+            <p>@Html.Raw(helloWorld)</p>
+
+        </p>
+
+        <p>
+            @{
+                var name = "Mikael Winbladh";
+            }
+            Hello, @(name.Substring(0, 6)). Your age is: <b>@(52 + 5).</b>
+        </p>
+        <p>
+            @{
+                var sum = 32 + 10;
+                var greeting = "Hello, world!";
+                var text = "";
+                for (int i = 0; i < 3; i++)
+                {
+                    text += greeting + " The result is: " + sum + "\n";
+                }
+            }
+
+            <h2>CodeBlocks</h2>
+            Text: @text
+        </p>
+
+        <p>
+            @{
+                var Codeblock = "This is a code block...";
+
+            <p>This is a tag with plain text and a @Codeblock <b>markup</b> inside of it...</p>
+            }
+            </p>*@
+
+    @*<p>
+            @{
+                string helloWorldMsg = "Good day";
+                if (DateTime.Now.Hour > 17)
+                {
+                    helloWorldMsg = "Good evening";
+                }
+                helloWorldMsg += ", world!";
+                helloWorldMsg = helloWorldMsg.ToUpper();
+            }
+
+            <div>
+                @helloWorldMsg
+            </div>
+        </p>*@
+
+    @*<p>
+            @if (DateTime.Now.Year >= 2042)
+            {
+            <span>The year 2042 has finally arrived!</span>
+            }
+            else
+            {
+            <span>We're still waiting for the year of 2042...</span>
+            }
+        </p>*@
+
+    @{
+        List<string> names = new List<string>()
+{
+"John Doe",
+"Jane Doe",
+"Joe Doe",
+"Jenna Doe",
+"Doggy Doe"
+};
+    }
+
+    <b>For loop</b>
+    <ul>
+            @for (int i = 0; i < names.Count; i++)
+            {
+                <li>@names[i]</li>
+            }
+        </ul>
+
+    <b>For each loop</b>
+    <ul>
+        @foreach (string name in names)
+        {
+            <li>@name</li>
+        }
+    </ul>
+
+    <b>While loop</b>
+    <ul>
+        @{
+            int counter = 0;
+        }
+        @while (counter < names.Count)
+        {
+            <li>@names[counter++]</li>
+        }
+    </ul>
+
+    <b>do while loop</b>
+    <ul>
+        @{
+            counter = 0;
+        }
+        @do
+        {
+            <li>@names[counter++]</li>
+        } while (counter < names.Count);
+    </ul>
+
+
 </body>
 </html>

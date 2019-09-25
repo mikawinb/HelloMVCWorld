@@ -1,0 +1,2 @@
+﻿2019-09-25
+Fortsätt med https://asp.mvc-tutorial.com/razor/templated-delegates/
