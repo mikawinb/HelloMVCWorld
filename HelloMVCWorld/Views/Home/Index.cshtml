@@ -14,9 +14,41 @@
 </head>
 <body>
     <span style="font-size: 18pt;">Hello, <b>MVC</b> world!</span>
-    <p>
+
+    @{ 
+//ViewData["Title"] = "Index";
+    }
+    <h2>
+        @for (int i = 0; i < 4; i++)
+        {
+            @await Html.PartialAsync("_Greeting", Model, new ViewDataDictionary(ViewData) { { "index", i } })
+        }
+
+    </h2>
+
+    @*<p>
         The movie <b>@Model.Title</b> was released @Model.ReleaseDate.ToLongDateString()
-    </p>
+    </p>*@
+
+    @*<p>
+        @using HelloMVCWorld.Models
+        @{
+            ViewData["Title"] = "TemplatedDelegate";
+
+            Func<dynamic, object> movieTemplate = @<div>@item.Title [@item.ReleaseDate.ToShortDateString()]</div>;
+
+            List<Movie> movies = new List<Movie>();
+            movies.Add(new Movie() { Title = "The Godfather", ReleaseDate = new DateTime(1972, 3, 24) });
+            movies.Add(new Movie() { Title = "Forrest Gump", ReleaseDate = new DateTime(1994, 7, 6) });
+            movies.Add(new Movie() { Title = "Fight Club", ReleaseDate = new DateTime(1999, 10, 15) });
+
+        }
+
+        @foreach (var movie in movies)
+        {
+            @movieTemplate(movie)
+        }
+    </p>*@
 
     @*<p>
             @{
@@ -89,7 +121,7 @@
             }
         </p>*@
 
-    @{
+    @*@{
         List<string> names = new List<string>()
 {
 "John Doe",
@@ -136,7 +168,9 @@
         {
             <li>@names[counter++]</li>
         } while (counter < names.Count);
-    </ul>
+    </ul>*@
+
+
 
 
 </body>

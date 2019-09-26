@@ -1,2 +1,5 @@
-﻿2019-09-25
+﻿2019-09-26
+Fortsätt med https://asp.mvc-tutorial.com/layout/introduction/
+
+2019-09-25
 Fortsätt med https://asp.mvc-tutorial.com/razor/templated-delegates/

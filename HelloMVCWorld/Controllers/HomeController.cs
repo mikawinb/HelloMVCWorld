@@ -16,6 +16,7 @@ namespace HelloMVCWorld.Controllers
             {
                 movie.Title = "The Godfather";
                 movie.ReleaseDate = new DateTime(1972, 3, 24);
+
             };
 
             return View(movie);
