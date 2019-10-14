@@ -27,12 +27,19 @@ namespace HelloMVCWorld
             {
                 app.UseDeveloperExceptionPage();
             }
-            app.UseMvcWithDefaultRoute();
+            //app.UseMvcWithDefaultRoute();
 
-            //app.Run(async (context) =>
-            //{
-            //    await context.Response.WriteAsync("Hello MVC World!");
-            //});
-        }
+            app.UseMvc(routes =>
+            {
+                // routes.MapRoute("ProductList", "Products/List/", new { controller = "Products", action = "List" }));
+                routes.MapRoute("Products", "Products/{action=Index}/{id?}", new { controller = "Products" });
+                routes.MapRoute("Default", "{controller=Home}/{action=Index}/{id?}");
+
+            });
+        //app.Run(async (context) =>
+        //{
+        //    await context.Response.WriteAsync("Hello MVC World!");
+        //});
+    }
     }
 }

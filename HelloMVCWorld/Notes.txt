@@ -1,4 +1,7 @@
-﻿2019-10-10
+﻿2019-10-14
+Fortsätt med https://asp.mvc-tutorial.com/models/introduction/
+
+2019-10-10
 Fortsätt med https://asp.mvc-tutorial.com/routing/introduction/ 
 
 2019-09-26
